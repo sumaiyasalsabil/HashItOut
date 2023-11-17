@@ -1,0 +1,12 @@
+# .gitignore
+
+# Virtual environment
+env/
+
+# IDE files
+.vscode/
+*.pyc
+
+# Other local files
+__pycache__/
+.DS_Store
