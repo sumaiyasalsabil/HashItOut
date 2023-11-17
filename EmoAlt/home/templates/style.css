@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f8f5e1; /* Off-white cream color for the entire screen */
+}
+
+.header {
+    background-color: #f4d03f; /* Yellow color for the header */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.content {
+    padding: 20px;
+}
