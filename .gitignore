@@ -2,6 +2,7 @@
 
 # Virtual environment
 env/
+EmoAlt/feed/test_data.csv
 
 # IDE files
 .vscode/
