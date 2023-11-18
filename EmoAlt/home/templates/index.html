@@ -1,32 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang = "en">
-<head>
-    <meta charset = "UTF-8">
-    <title>Emotion Alert</title>
-    {% load static %}
-    <link rel = "stylesheet" href = "{% static 'style.css' %}">
-</head>
+{% extends 'base.html' %}
 
-<body>
-    <div class = "header">
-        <!---Directory content-->
-        <nav>
-            <div class = "navLinks">
-                <u1>
-                    <li><a href = "./index.html">Home</a></li>
-                    <li><a href = "{% url 'feed' %}">Feed</a></li>
-                </u1>
-            </div>
-        </nav>
-    </div>
+{% block title %}Home - Emotion Alert{% endblock %}
 
-    <div class="content">
-        <!-- The rest of your content goes here -->
-        <div class="information">
-            <!-- Content inside the information div -->
-        </div>
-    </div>
-</body>
-</html>
+{% block content %}
+<!-- Home page specific content goes here -->
+<div>
+    <h1>Welcome to Emotion Alert</h1>
+    <p>This is the home page content.</p>
+</div>
+{% endblock %}
 

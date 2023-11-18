@@ -1,41 +1,88 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Lucisa Console, monospace;
     margin: 0;
-    background-color: #f8f5e1; /* Off-white color for the entire screen */
+    background-color: #f8f5e1; /* For the entire screen */
 }
 
 .header {
     background-color: #f4d03f; /* Yellow color for the header */
-    color: #fff;
+    color: black; /* Text color for the header */
     padding: 20px;
-    text-align: center;
+    display: flex;
+    align-items: center; /* Aligns items vertically */
 }
 
 nav {
     width: 80%;
-    position: sticky;
-    margin: 20px auto;
-    z-index: 1;
+    position: sticky; /* Makes the nav bar stick to the top of the viewport on scroll */
+    margin: 20px auto; /* Centers the nav bar horizontally with equal top and bottom margins */
+    z-index: 1; /* Ensures the nav bar stacks on top of other elements if they overlap */
     display: flex;
     align-items: center;
 }
 
-.nav-links {
-    flex: 1;
-    text-align: right;
+.logo {
+    flex: 1;  /* Each takes equal space */
+    display: flex;
+    justify-content: center; /* Center content within each block */
 }
 
-.nav-links ul li {
-    list-style: none;
-    display: inline-block;
+.logo img {
+    width: 90px;
+    border: 1px solid #fff; 
+    border-radius: 50%; /* Make logo round */
+    padding: 5%;
+}
+
+.title {
+    flex-grow: 2; /* Allows the title to take up available space */
+    display: flex;
+    justify-content: center; /* Centers the title horizontally */
+    align-items: center; /* Centers the title vertically */
+}
+
+.title h1 {
+    margin: 0; 
+    font-size: 2em; /* Larger text size for the title */
+}
+
+.navLinks {
+    flex: 1;  /* Each takes equal space */
+    display: flex;
+    justify-content: center; /* Center content within each block */
+}
+
+.navLinks ul {
+    list-style: none; /* So its not displayed as a list */
+    display: flex;
+    padding: 0; /* Removes padding */
+}
+
+.navLinks ul li {
     margin: 0 20px;
 }
 
-.nav-links ul li a { /* the home, menu stuff */
-    color: #000000;
-    text-decoration: none;
-}
+.navLinks ul li a {
+    color: black; /* Sets link text to black */
+    text-decoration: none; /* Removes underline from links */
+} 
 
 .content {
     padding: 20px;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: center; /* Center the screen in the dashboard */
+    padding: 20px;
+}
+
+.screen {
+    width: 60%; 
+    height: 400px; 
+    background-color: #eeeeee; 
+    border: 1px solid #cccccc; 
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for depth */
+    margin: auto; /* Centers the div in the flex container if there's only one widget */
 }
