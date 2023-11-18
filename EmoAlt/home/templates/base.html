@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Emotion Alert{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="header">
+        <nav>
+            <div class="logo">
+                <img src="{% static 'images/Logo_3.png' %}">
+            </div>
+            <div class="title">
+                <h1>Emotion Alert</h1>
+            </div>
+            <div class="navLinks">
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'feed' %}">Feed</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="content">
+        {% block content %}
+        <!-- The content block where child templates will insert specific page content -->
+        {% endblock content %}
+    </div>
+</body>
+</html>
