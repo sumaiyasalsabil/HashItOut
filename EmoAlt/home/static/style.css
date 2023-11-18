@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f8f5e1; /* Off-white cream color for the entire screen */
+    background-color: #f8f5e1; /* Off-white color for the entire screen */
 }
 
 .header {
@@ -9,6 +9,31 @@ body {
     color: #fff;
     padding: 20px;
     text-align: center;
+}
+
+nav {
+    width: 80%;
+    position: sticky;
+    margin: 20px auto;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.nav-links ul li a { /* the home, menu stuff */
+    color: #000000;
+    text-decoration: none;
 }
 
 .content {
