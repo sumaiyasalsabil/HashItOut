@@ -7,9 +7,6 @@ from django.http import HttpResponse, HttpRequest
 
 def feed(request):
 
-
-    
-
     return render(request, "feed.html", context={})
 
 
