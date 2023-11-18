@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Live Data Feed - Emotion Alert{% endblock %}
 
+<body>
 {% block content %}
 
 <!-- Live Screen -->
@@ -15,9 +17,16 @@
 </div>
 
 <!-- Pop-up Alert -->
-<div id="alertPopup" class="alert-popup" style="display: none;">
+<div id="alertPopup" class="alert-popup">
     <p>Alert: Calm your tits!</p>
+    <button onclick="suggestions()">See Suggestions</button>
     <button onclick="closePopup()">Close</button>
+    <!---Test close button-->
+    <button onclick="document.getElementById('alertPopup').style.display = 'none';">Test Close</button>
 </div>
-
 {% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/popup.js' %}"></script>
+{% endblock %}
+</body>

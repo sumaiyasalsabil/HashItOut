@@ -23,7 +23,8 @@ from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include("home.urls")),
-    path('', RedirectView.as_view(url='home/'),),
-    path("feed/", include("feed.urls"))
+    path('', RedirectView.as_view(url='home/')),
+    path("feed/", include("feed.urls")),
+    path("resources/", include("resources.urls")),
 ]
 
