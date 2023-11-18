@@ -7,11 +7,6 @@ class BrainWave(models.Model):
 
 class WavePoint(models.Model):
     wave = models.ForeignKey(BrainWave, on_delete=models.CASCADE)
-
-class WaveTime(models.Model):
-    point = models.ForeignKey(WavePoint, on_delete=models.CASCADE)
+    x = models.FloatField()
+    y = models.FloatField()
     time = models.FloatField()
-
-class WaveValue(models.Model):
-    point = models.ForeignKey(WavePoint, on_delete=models.CASCADE)
-    value = models.FloatField()
