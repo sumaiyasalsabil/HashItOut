@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Emotion Alert{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
+        
+    {% block scripts %}
+        <script type="text/javascript">
+            // This will correctly process the Django URL tag and set the variable
+            var resourcesUrl = "{% url 'resources' %}";
+        </script>
+        <script src="{% static 'popup.js' %}"></script>
+    {% endblock %}
+        
 </head>
 
 <body>

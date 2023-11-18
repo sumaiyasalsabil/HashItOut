@@ -27,4 +27,3 @@ urlpatterns = [
     path("feed/", include("feed.urls")),
     path("resources/", include("resources.urls")),
 ]
-

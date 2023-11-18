@@ -3,6 +3,8 @@
 
 {% block title %}Live Data Feed - Emotion Alert{% endblock %}
 
+
+
 <body>
 {% block content %}
 
@@ -44,14 +46,6 @@
     <!---Test close button-->
     <button onclick="document.getElementById('alertPopup').style.display = 'none';">Test Close</button>
 </div>
-{% endblock %}
-
-{% block scripts %}
-<script type="text/javascript">
-    // This will correctly process the Django URL tag and set the variable
-    var resourcesUrl = "{% url 'resources' %}";
-</script>
-<script src="{% static 'js/popup.js' %}"></script>
 {% endblock %}
 
 </body>
