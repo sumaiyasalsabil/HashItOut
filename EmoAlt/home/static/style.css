@@ -1,7 +1,11 @@
-body {
+html, body {
     font-family: Lucisa Console, monospace;
     margin: 0;
     background-color: #f8f5e1; /* For the entire screen */
+    height: 100%; /* Make sure the html and body cover the full height of the viewport */
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
 }
 
 .header {
@@ -68,7 +72,26 @@ nav {
 } 
 
 .content {
+    flex: 1; /* Allow content to grow and fill the available space */
     padding: 20px;
+}
+
+footer {
+    padding: 20px;
+    background-color: #f4d03f; 
+    text-align: center;
+    display: flex; /* Use flexbox to manage the footer content */
+    justify-content: center; /* Center footer content horizontally */
+    align-items: center; /* Center footer content vertically */
+    flex-wrap: wrap; /* Wrap items if necessary */
+}
+
+.footerLogos img {
+    max-height: 50px; /* Maximum height for logos */
+    max-width: 100px; /* Maximum width for logos */
+    margin: 0 10px; /* Space out logos */
+    display: inline-block; /* Display logos inline */
+    vertical-align: middle; /* Align logos vertically */
 }
 
 .dashboard {
