@@ -6,7 +6,7 @@ from django.views.generic import RedirectView
 from django.urls import include
 
 urlpatterns = [
-    path("", views.index, name="index")
+    path("", views.resources, name="resources")
 ]
 
 urlpatterns += staticfiles_urlpatterns()

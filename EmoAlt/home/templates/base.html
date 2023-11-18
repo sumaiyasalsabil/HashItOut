@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Emotion Alert{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
@@ -11,7 +12,7 @@
     <div class="header">
         <nav>
             <div class="logo">
-                <img src="{% static 'images/Logo_3.png' %}">
+                <img src="{% static 'images/Logo_3.png' %}", alt="Emotion Alert Logo">
             </div>
             <div class="title">
                 <h1>Emotion Alert</h1>
@@ -20,6 +21,7 @@
                 <ul>
                     <li><a href="{% url 'index' %}">Home</a></li>
                     <li><a href="{% url 'feed' %}">Feed</a></li>
+                    <li><a href="{% url 'resources' %}">Resources</a></li>
                 </ul>
             </div>
         </nav>
