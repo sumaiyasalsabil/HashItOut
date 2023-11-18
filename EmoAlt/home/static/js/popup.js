@@ -4,8 +4,8 @@ function showPopup(data) {
     }
 }
 
-function redirectToSuggestions() {
-    window.location.href = '/path-to-suggestions-page'; // Replace with the actual path
+function showResources() {
+    window.location.href = resourcesUrl; // Defined in feed.html
 }
 
 function closePopup() {

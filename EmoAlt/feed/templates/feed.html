@@ -19,7 +19,7 @@
 <!-- Pop-up Alert -->
 <div id="alertPopup" class="alert-popup">
     <p>Alert: Calm your tits!</p>
-    <button onclick="suggestions()">See Suggestions</button>
+    <button onclick="showResources()">See Resources</button>
     <button onclick="closePopup()">Close</button>
     <!---Test close button-->
     <button onclick="document.getElementById('alertPopup').style.display = 'none';">Test Close</button>
@@ -27,6 +27,11 @@
 {% endblock %}
 
 {% block scripts %}
+<script type="text/javascript">
+    // This will correctly process the Django URL tag and set the variable
+    var resourcesUrl = "{% url 'resources' %}";
+</script>
 <script src="{% static 'js/popup.js' %}"></script>
 {% endblock %}
+
 </body>

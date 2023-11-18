@@ -88,7 +88,7 @@ nav {
 }
 
 .alert-popup {
-    display: none;
+    display: block; /* by default is not displayed until alert is triggered*/
     position: fixed;
     left: 50%;
     top: 50%;
