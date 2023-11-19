@@ -1,13 +1,17 @@
-body {
+html, body {
     font-family: Lucisa Console, monospace;
     margin: 0;
     background-color: #f8f5e1; /* For the entire screen */
+    height: 100%; /* Make sure the html and body cover the full height of the viewport */
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
 }
 
 .header {
     background-color: #f4d03f; /* Yellow color for the header */
     color: black; /* Text color for the header */
-    padding: 20px;
+    padding: 10px;
     display: flex;
     align-items: center; /* Aligns items vertically */
 }
@@ -28,7 +32,7 @@ nav {
 }
 
 .logo img {
-    width: 90px;
+    width: 60px;
     border: 1px solid #fff; 
     border-radius: 50%; /* Make logo round */
     padding: 5%;
@@ -43,7 +47,7 @@ nav {
 
 .title h1 {
     margin: 0; 
-    font-size: 2em; /* Larger text size for the title */
+    font-size: 1.5em; /* Larger text size for the title */
 }
 
 .navLinks {
@@ -68,7 +72,26 @@ nav {
 } 
 
 .content {
+    flex: 1; /* Allow content to grow and fill the available space */
     padding: 20px;
+}
+
+footer {
+    padding: 20px;
+    background-color: #f4d03f; 
+    text-align: center;
+    display: flex; /* Use flexbox to manage the footer content */
+    justify-content: center; /* Center footer content horizontally */
+    align-items: center; /* Center footer content vertically */
+    flex-wrap: wrap; /* Wrap items if necessary */
+}
+
+.footerLogos img {
+    max-height: 50px; /* Maximum height for logos */
+    max-width: 100px; /* Maximum width for logos */
+    margin: 0 10px; /* Space out logos */
+    display: inline-block; /* Display logos inline */
+    vertical-align: middle; /* Align logos vertically */
 }
 
 .dashboard {
@@ -87,7 +110,32 @@ nav {
     margin: auto; /* Centers the div in the flex container if there's only one widget */
 }
 
-.alert-popup {
+.dataList {
+    display: flex;
+    justify-content: space-around; /* Distribute space evenly around items */
+    align-items: center; /* Align items vertically */
+    padding: 20px;
+}
+
+.dataItem {
+    display: flex;
+    flex-direction: column; /* Stack icon and description vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; 
+}
+
+.dataItem img {
+    width: 50px; 
+    height: 50px; 
+    margin-bottom: 10px; /* Space between icon and description */
+}
+
+.dataDescription {
+    font-size: 0.9em; 
+    color: #333; 
+}
+
+.alertPopup {
     display: block; /* by default is not displayed until alert is triggered*/
     position: fixed;
     left: 50%;
@@ -98,4 +146,6 @@ nav {
     border: 1px solid #ccc;
     z-index: 100; /* Ensure it's on top of other elements */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 80%; 
+    max-width: 400px;
 }

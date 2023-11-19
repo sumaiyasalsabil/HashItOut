@@ -3,28 +3,44 @@
 
 {% block title %}Live Data Feed - Emotion Alert{% endblock %}
 
-
-
 <body>
 {% block content %}
 
 <!-- Live Screen -->
 <div class="dashboard">
     <div class="screen">
-        <!-- Placeholder for Mid-sized screen live data -->
+        <!-- Placeholder for screen live data -->
         <div id="screen-content">
             <!-- Dynamic content will be loaded here -->
         </div>
     </div>
 </div>
 
+<!-- Icon Data List -->
+<div class="dataList">
+    <div class="dataItem">
+        <img src="{% static 'images/brain.png' %}" alt="Brain Data"/>
+        <span class="dataDescription">Brain Data</span>
+    </div>
+    <div class="dataItem">
+        <img src="{% static 'images/heart.png' %}" alt="Heart Data"/>
+        <span class="dataDescription">Heart Data</span>
+    </div>
+    <div class="dataItem">
+        <img src="{% static 'images/breath.png' %}" alt="Breath Data"/>
+        <span class="dataDescription">Breath Data</span>
+    </div>
+    <div class="dataItem">
+        <img src="{% static 'images/body.png' %}" alt="Body Data"/>
+        <span class="dataDescription">Body Data</span>
+    </div>
+</div>
+
 <!-- Pop-up Alert -->
-<div id="alertPopup" class="alert-popup">
-    <p>Alert: Calm your tits!</p>
+<div id="alertPopup" class="alertPopup">
+    <p>Alert: High Stress Levels Detected!</p>
     <button onclick="showResources()">See Resources</button>
     <button onclick="closePopup()">Close</button>
-    <!---Test close button-->
-    <button onclick="document.getElementById('alertPopup').style.display = 'none';">Test Close</button>
 </div>
 {% endblock %}
 
