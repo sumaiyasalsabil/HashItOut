@@ -20,7 +20,7 @@ function setupPopupInterval() {
     var interval = getRandomInterval(20000, 30000); 
     setTimeout(function() {
         showPopup();
-        setupPopupInterval(); 
+        //setupPopupInterval(); 
     }, interval);
 }
 
