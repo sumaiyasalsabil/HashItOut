@@ -9,8 +9,6 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest
 
 
-
-
 def feed(request):
     
     initialize()
@@ -36,7 +34,6 @@ def initialize():
         models.StartButton.objects.all().delete()
 
     models.StartButton.objects.create()
-
 
 import logging
 
@@ -97,7 +94,6 @@ class MainApplication(QtWidgets.QMainWindow):
             DataFilter.perform_bandstop(data[channel], self.sampling_rate, 58.0, 62.0, 2,
                                         FilterTypes.BUTTERWORTH_ZERO_PHASE, 0)
             self.curves[count].setData(data[channel].tolist())
-
 
 def get_window():
     params = BrainFlowInputParams()
