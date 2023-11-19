@@ -36,11 +36,13 @@
     </div>
 </div>
 
+{% if not feed_active %}
 <form class="" action="" method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="Submit" value="Start Feed"/>
+    {{ form }}
+    <input type="Submit" value="Submit"/>
 </form>
+{% endif %}
 
 <!-- Pop-up Alert -->
 <div id="alertPopup" class="alertPopup">

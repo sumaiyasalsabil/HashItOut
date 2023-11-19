@@ -1,43 +1,3 @@
-from django.shortcuts import render
-import random
-import numpy as np
-from . import models
-from . import forms
-# Create your views here.
-
-from django.shortcuts import render
-from django.http import HttpResponse, HttpRequest
-
-
-
-
-def feed(request):
-    
-    initialize()
-
-
-    button = models.StartButton.objects.first()
-    feed_active = False
-
-    if request.method == 'POST':
-
-        get_window()
-        button.clicked = True
-        feed_active = True
-
-
-    # Render the template with the object and form
-    return render(request, 'feed.html', {'form': forms.StartButtonForm(), "feed_active":feed_active})
-
-
-def initialize():
-    
-    if models.StartButton.objects.exists():
-        models.StartButton.objects.all().delete()
-
-    models.StartButton.objects.create()
-
-
 import logging
 
 from brainflow.board_shim import BoardShim, BrainFlowInputParams, BoardIds
@@ -57,7 +17,7 @@ class MainApplication(QtWidgets.QMainWindow):
         self.exg_channels = BoardShim.get_eeg_channels(self.board_id)
         self.sampling_rate = BoardShim.get_sampling_rate(self.board_id)
         self.update_speed_ms = 50
-        self.window_size = 50
+        self.window_size = 25
         self.num_points = self.window_size * self.sampling_rate
 
         self.win = pg.GraphicsLayoutWidget(title='BrainFlow Plot', size=(800, 600))
