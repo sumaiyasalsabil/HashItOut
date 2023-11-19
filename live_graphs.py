@@ -60,7 +60,7 @@ class MainApplication(QtWidgets.QMainWindow):
 
 def main():
     params = BrainFlowInputParams()
-    params.serial_port = "/dev/tty.usbmodem206F316C48471"
+    params.serial_port = "/dev/ttyACMO"
 
     board_shim = BoardShim(BoardIds.MUSE_2_BOARD, params)
     try:
@@ -78,5 +78,4 @@ def main():
             logging.info('Releasing session')
             board_shim.release_session()
 
-if __name__ == '__main__':
-    main()
+main()
