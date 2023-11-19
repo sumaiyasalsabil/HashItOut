@@ -3,36 +3,37 @@ import random
 import numpy as np
 from . import models
 from . import forms
+import time
+
 # Create your views here.
 
 from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest
 
-
-
-
 def feed(request):
-    
     initialize()
-
-
     button = models.StartButton.objects.first()
     feed_active = False
+    loading = False
 
     if request.method == 'POST':
         # Process the button click
-        clicked =  request.POST.get('clicked')
-
+        clicked = request.POST.get('clicked')
+        print(request.POST)
         if clicked:
-
+            loading = True
+            time.sleep(5)
             get_window()
             button.clicked = True
             feed_active = True
-
+            loading = False  # Reset loading to false once the feed is ready
 
     # Render the template with the object and form
-    return render(request, 'feed.html', {'form': forms.StartButtonForm(), "feed_active":feed_active})
-
+    return render(request, 'feed.html', {
+        'form': forms.StartButtonForm(), 
+        "feed_active" : feed_active, 
+        "loading" : loading
+    })
 
 def initialize():
     
@@ -40,7 +41,6 @@ def initialize():
         models.StartButton.objects.all().delete()
 
     models.StartButton.objects.create()
-
 
 import logging
 
@@ -50,7 +50,6 @@ from brainflow.data_filter import DataFilter, FilterTypes, DetrendOperations
 import pyqtgraph as pg
 from PyQt6 import QtWidgets, QtCore
 import sys
-
 
 class MainApplication(QtWidgets.QMainWindow):
     def __init__(self, board_shim, *args, **kwargs):
@@ -122,6 +121,3 @@ def get_window():
         if board_shim.is_prepared():
             logging.info('Releasing session')
             board_shim.release_session()
-
-
-

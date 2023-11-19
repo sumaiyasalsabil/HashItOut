@@ -94,9 +94,10 @@ footer {
     vertical-align: middle; /* Align logos vertically */
 }
 
+/*
 .dashboard {
     display: flex;
-    justify-content: center; /* Center the screen in the dashboard */
+    justify-content: center; /* Center the screen in the dashboard 
     padding: 20px;
 }
 
@@ -106,8 +107,47 @@ footer {
     background-color: #eeeeee; 
     border: 1px solid #cccccc; 
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for depth */
-    margin: auto; /* Centers the div in the flex container if there's only one widget */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for depth 
+    margin: auto; /* Centers the div in the flex container if there's only one widget 
+}
+*/
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2em;
+    color: #555;
+}
+
+.startFeedButton {
+    background-color: #f4d03f; /* Yellow background */
+    color: black; /* Black text */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Slight round corners, adjust as needed */
+    padding: 15px 30px; /* Padding to increase size */
+    font-size: 1.5em; /* Larger text */
+    cursor: pointer; /* Change cursor to pointer */
+    outline: none; /* Remove outline */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover and click effects */
+}
+
+.startFeedButton:hover {
+    background-color: #e6be8a; /* Slightly lighter yellow on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.startFeedButton:active {
+    transform: scale(0.95); /* Slightly decrease size when clicked */
+}
+
+.startButtonContainer {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full height of the viewport */
+    padding: 20px; /* Add some padding */
 }
 
 .dataList {
