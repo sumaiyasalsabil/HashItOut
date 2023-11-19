@@ -7,10 +7,9 @@ Welcome to the Emotion Alert project, developed during Nathacks, a hackathon whe
 ## Table of Contents
 
 - [Installation](#installation)
-- [Usage](#usage)
 - [Features](#features)
-- [Contributing](#contributing)
-- [License](#license)
+- [How We Built It](#how-we-built-it)
+- [References](#references)
 - [natHACKS](#nathacks)
 
 ## Installation
@@ -26,6 +25,13 @@ cd emotion-alert
 - Real-time stress monitoring
 - Panic attack anticipation
 - Actionable insights and resources
+
+## How We Built It
+
+We started by designing a simple experiment to detect stress levels. Firstly, participants’ basal levels were recorded by exposing them to white noise to serve as a control to compare stress data. Afterwards, participants were introduced to a stress-inducing video, and their EEG data was recorded. The data collected was then put into a feature extraction algorithm, which filtered out background noise and irrelevant spikes in the data. To create a classification mdoel, we used the features to train an SVM model. The classification model is used to detect unusually high levels of stress. The live EEG feed is also displayed on our web app that we built, alongside resources for managing stress and general information on stress and panic attacks. To alert users when their stress levels are unusually high, we also built a wearable stress-induced buzzer (WSIB) using ESP32.
+
+## References 
+https://github.com/jordan-bird/eeg-feature-generation
 
 ## natHACKS
 
