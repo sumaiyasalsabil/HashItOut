@@ -12,9 +12,11 @@ function closePopup() {
     document.getElementById("alertPopup").style.display = "none";
 }
 
+/* 
 document.addEventListener('DOMContentLoaded', function() {
     showPopup();
  });
+*/
 /* 
 function fetchData() {
     // For testing

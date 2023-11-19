@@ -6,51 +6,70 @@
 <body>
 {% block content %}
 
-<!-- Live Screen -->
+<!-- Test Button for Triggering Alert Popup -->
+<button onclick="showPopup(1)">Test Alert Popup</button>
+
+<!--
+Live Screen
 <div class="dashboard">
     <div class="screen">
-        <!-- Placeholder for screen live data -->
+        Placeholder for screen live data 
         <div id="screen-content">
-            <!-- Dynamic content will be loaded here -->
+            Dynamic content will be loaded here
         </div>
     </div>
 </div>
+-->
 
-<!-- Icon Data List -->
-<div class="dataList">
-    <div class="dataItem">
-        <img src="{% static 'images/brain.png' %}" alt="Brain Data"/>
-        <span class="dataDescription">Brain Data</span>
+{% if loading %}
+    <!-- Display Loading Message -->
+    <div class="loadingContainer">
+        <p>Loading...</p> <!-- You can replace this with a spinner or any loading animation -->
     </div>
-    <div class="dataItem">
-        <img src="{% static 'images/heart.png' %}" alt="Heart Data"/>
-        <span class="dataDescription">Heart Data</span>
-    </div>
-    <div class="dataItem">
-        <img src="{% static 'images/breath.png' %}" alt="Breath Data"/>
-        <span class="dataDescription">Breath Data</span>
-    </div>
-    <div class="dataItem">
-        <img src="{% static 'images/body.png' %}" alt="Body Data"/>
-        <span class="dataDescription">Body Data</span>
-    </div>
-</div>
 
-{% if not feed_active %}
-<form class="" action="" method="POST">
-    {% csrf_token %}
-    {{ form }}
-    <input type="Submit" value="Submit"/>
-</form>
+{% else %}
+    {% if not feed_active %}
+        <!-- Live Stream Button -->
+        <div class="startButtonContainer">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="clicked" value="true"/>
+                <input type="submit" value="Start Feed" class="startFeedButton"/>
+                <!--
+                {{ form.as_p }}
+                <input type="submit" value="Start Feed" class="startFeedButton"/>
+                -->
+            </form>
+        </div>  
+    {% endif %}
+
+    <!-- Icon Data List -->
+    <div class="dataList">
+        <div class="dataItem">
+            <img src="{% static 'images/brain.png' %}" alt="Brain Data"/>
+            <span class="dataDescription">Brain Data</span>
+        </div>
+        <div class="dataItem">
+            <img src="{% static 'images/heart.png' %}" alt="Heart Data"/>
+            <span class="dataDescription">Heart Data</span>
+        </div>
+        <div class="dataItem">
+            <img src="{% static 'images/breath.png' %}" alt="Breath Data"/>
+            <span class="dataDescription">Breath Data</span>
+        </div>
+        <div class="dataItem">
+            <img src="{% static 'images/body.png' %}" alt="Body Data"/>
+            <span class="dataDescription">Body Data</span>
+        </div>
+    </div>
+
+    <!-- Pop-up Alert -->
+    <div id="alertPopup" class="alertPopup">
+        <p>Alert: High Stress Levels Detected!</p>
+        <button onclick="showResources()">See Resources</button>
+        <button onclick="closePopup()">Close</button>
+    </div>
 {% endif %}
 
-<!-- Pop-up Alert -->
-<div id="alertPopup" class="alertPopup">
-    <p>Alert: High Stress Levels Detected!</p>
-    <button onclick="showResources()">See Resources</button>
-    <button onclick="closePopup()">Close</button>
-   
-</div>
 {% endblock %}
-
 </body>
