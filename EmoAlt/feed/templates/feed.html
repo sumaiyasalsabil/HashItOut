@@ -36,16 +36,18 @@
     </div>
 </div>
 
+<form class="" action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="Submit" value="Start Feed"/>
+</form>
+
 <!-- Pop-up Alert -->
 <div id="alertPopup" class="alertPopup">
     <p>Alert: High Stress Levels Detected!</p>
     <button onclick="showResources()">See Resources</button>
     <button onclick="closePopup()">Close</button>
-    <form class="" action="" method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <input type="Submit" value="Start Feed"/>
-        </form>
+   
 </div>
 {% endblock %}
 
