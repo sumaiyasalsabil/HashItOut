@@ -14,7 +14,7 @@ function closePopup() {
 
 /* 
 document.addEventListener('DOMContentLoaded', function() {
-    showPopup(1);
+    showPopup();
  });
 */
 /* 
