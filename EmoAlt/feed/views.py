@@ -15,51 +15,33 @@ def feed(request):
     
     initialize()
 
+
     button = models.StartButton.objects.first()
-    feed_active = button.clicked
+    feed_active = False
 
     if request.method == 'POST':
         # Process the button click
-        clicked =  request.POST.get('Submit')
+        clicked =  request.POST.get('clicked')
+
         if clicked:
-            start_feed()
-            feed_active = True
+
+            get_window()
             button.clicked = True
+            feed_active = True
 
 
     # Render the template with the object and form
-    return render(request, 'feed.html', {'form': forms.StartButtonForm()})
+    return render(request, 'feed.html', {'form': forms.StartButtonForm(), "feed_active":feed_active})
 
 
 def initialize():
-    if not models.StartButton.objects.exists():
-        models.StartButton.objects.create()
-
-# def update():
-
-#     # Update wave
-#     update_wave()
     
-    # Update Points
+    if models.StartButton.objects.exists():
+        models.StartButton.objects.all().delete()
+
+    models.StartButton.objects.create()
 
 
-# def update_wave():
-#     # Check if wave exists, create if not.
-#     if not wave_exists():
-#         create_wave()
-
-# def create_wave():
-#     models.BrainWave.objects.create()
-
-# def wave_exists():
-#     waves = models.BrainWave.objects.filter()
-#     return bool(waves)
-
-
-
-
-
-""""""""""""""""""""
 import logging
 
 from brainflow.board_shim import BoardShim, BrainFlowInputParams, BoardIds
@@ -79,7 +61,7 @@ class MainApplication(QtWidgets.QMainWindow):
         self.exg_channels = BoardShim.get_eeg_channels(self.board_id)
         self.sampling_rate = BoardShim.get_sampling_rate(self.board_id)
         self.update_speed_ms = 50
-        self.window_size = 25
+        self.window_size = 50
         self.num_points = self.window_size * self.sampling_rate
 
         self.win = pg.GraphicsLayoutWidget(title='BrainFlow Plot', size=(800, 600))
@@ -120,7 +102,8 @@ class MainApplication(QtWidgets.QMainWindow):
                                         FilterTypes.BUTTERWORTH_ZERO_PHASE, 0)
             self.curves[count].setData(data[channel].tolist())
 
-def start_feed():
+
+def get_window():
     params = BrainFlowInputParams()
     params.serial_port = "/dev/ttyACMO"
 
@@ -139,11 +122,6 @@ def start_feed():
         if board_shim.is_prepared():
             logging.info('Releasing session')
             board_shim.release_session()
-
-
-
-
-
 
 
 

@@ -43,7 +43,7 @@
     <button onclick="closePopup()">Close</button>
     <form class="" action="" method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form }}
         <input type="Submit" value="Start Feed"/>
         </form>
 </div>
