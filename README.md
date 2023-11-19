@@ -1,6 +1,6 @@
-# Emotion Alert - Team 44
+# Emotion Alert - natHACKS
 
-## natHACKS
+## Team 44
 
 Welcome to the Emotion Alert project, developed during Nathacks, a hackathon where our team, Team 44, collaborated to create an application that helps users manage stress and anticipate panic attacks using advanced feature extraction algorithms.
 
