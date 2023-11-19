@@ -2,29 +2,38 @@ from django.shortcuts import render
 import random
 import numpy as np
 from . import models
+from . import forms
 # Create your views here.
 
 from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest
 
 
+
+
 def feed(request):
+    
+    initialize()
 
-    if start_feed():
-        main()
+    button = models.StartButton.objects.first()
+    feed_active = button.clicked
 
-    return render(request, "feed.html", context={})
+    if request.method == 'POST':
+        # Process the button click
+        clicked =  request.POST.get('Submit')
+        if clicked:
+            start_feed()
+            feed_active = True
+            button.clicked = True
 
 
+    # Render the template with the object and form
+    return render(request, 'feed.html', {'form': forms.StartButtonForm()})
 
-def start_feed():
-    return False
 
-NUM_POINTS = 100
-
-"""Test Purposes!!"""
-points = np.random.uniform(-1, 1, NUM_POINTS)
-
+def initialize():
+    if not models.StartButton.objects.exists():
+        models.StartButton.objects.create()
 
 # def update():
 
@@ -111,7 +120,7 @@ class MainApplication(QtWidgets.QMainWindow):
                                         FilterTypes.BUTTERWORTH_ZERO_PHASE, 0)
             self.curves[count].setData(data[channel].tolist())
 
-def main():
+def start_feed():
     params = BrainFlowInputParams()
     params.serial_port = "/dev/ttyACMO"
 
