@@ -119,3 +119,9 @@ def get_window():
         if board_shim.is_prepared():
             logging.info('Releasing session')
             board_shim.release_session()
+
+
+def send_signal(request):
+    status = random.choice([True, False])
+    print(status)
+    return JsonResponse({'status': status})

@@ -1,7 +1,7 @@
 function showPopup(data) {
-    if (data === 1) {
-        document.getElementById("alertPopup").style.display = "block";
-    }
+    //if (data === 1) {
+    document.getElementById("alertPopup").style.display = "block";
+    //}
 }
 
 function showResources() {
@@ -11,3 +11,17 @@ function showResources() {
 function closePopup() {
     document.getElementById("alertPopup").style.display = "none";
 }
+
+function getRandomInterval(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function setupPopupInterval() {
+    var interval = getRandomInterval(20000, 30000); 
+    setTimeout(function() {
+        showPopup();
+        setupPopupInterval(); 
+    }, interval);
+}
+
+setupPopupInterval();
