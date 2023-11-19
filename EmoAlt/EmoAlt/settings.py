@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-umych#e6xilf237c)%q4d3abfd=r368f7n#9nn@p!(y%e$58-!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["hashitout.live"]
+ALLOWED_HOSTS = ["hashitout.live",
+                 "192.168.193.46",
+                 "0.0.0.0"]
 
 
 # Application definition
