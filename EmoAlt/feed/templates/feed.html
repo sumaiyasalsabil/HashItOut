@@ -3,8 +3,6 @@
 
 {% block title %}Live Data Feed - Emotion Alert{% endblock %}
 
-
-
 <body>
 {% block content %}
 
@@ -39,12 +37,10 @@
 </div>
 
 <!-- Pop-up Alert -->
-<div id="alertPopup" class="alert-popup">
-    <p>Alert: Calm your tits!</p>
+<div id="alertPopup" class="alertPopup">
+    <p>Alert: High Stress Levels Detected!</p>
     <button onclick="showResources()">See Resources</button>
     <button onclick="closePopup()">Close</button>
-    <!---Test close button-->
-    <button onclick="document.getElementById('alertPopup').style.display = 'none';">Test Close</button>
 </div>
 {% endblock %}
 

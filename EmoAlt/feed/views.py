@@ -7,7 +7,7 @@ from . import models
 from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest
 
-from .live_graphs import *
+#from .live_graphs import *
 
 def feed(request):
 
