@@ -136,7 +136,7 @@ footer {
 }
 
 .alertPopup {
-    display: block; /* by default is not displayed until alert is triggered*/
+    display: none; /* by default is not displayed until alert is triggered*/
     position: fixed;
     left: 50%;
     top: 50%;
