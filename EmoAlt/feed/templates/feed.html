@@ -6,25 +6,10 @@
 <body>
 {% block content %}
 
-<!-- Test Button for Triggering Alert Popup -->
-<button onclick="showPopup(1)">Test Alert Popup</button>
-
-<!--
-Live Screen
-<div class="dashboard">
-    <div class="screen">
-        Placeholder for screen live data 
-        <div id="screen-content">
-            Dynamic content will be loaded here
-        </div>
-    </div>
-</div>
--->
-
 {% if loading %}
     <!-- Display Loading Message -->
     <div class="loadingContainer">
-        <p>Loading...</p> <!-- You can replace this with a spinner or any loading animation -->
+        <div class="spinner"></div>
     </div>
 
 {% else %}
@@ -33,12 +18,9 @@ Live Screen
         <div class="startButtonContainer">
             <form action="" method="POST">
                 {% csrf_token %}
+                {{ form.as_p }}
                 <input type="hidden" name="clicked" value="true"/>
                 <input type="submit" value="Start Feed" class="startFeedButton"/>
-                <!--
-                {{ form.as_p }}
-                <input type="submit" value="Start Feed" class="startFeedButton"/>
-                -->
             </form>
         </div>  
     {% endif %}

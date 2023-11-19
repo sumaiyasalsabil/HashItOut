@@ -94,59 +94,53 @@ footer {
     vertical-align: middle; /* Align logos vertically */
 }
 
-/*
-.dashboard {
-    display: flex;
-    justify-content: center; /* Center the screen in the dashboard 
-    padding: 20px;
-}
-
-.screen {
-    width: 60%; 
-    height: 400px; 
-    background-color: #eeeeee; 
-    border: 1px solid #cccccc; 
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for depth 
-    margin: auto; /* Centers the div in the flex container if there's only one widget 
-}
-*/
-
 .loadingContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-size: 2em;
-    color: #555;
+}
+
+.spinner {
+    border: 5px solid #f3f3f3; 
+    border-top: 5px solid #3498db; 
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .startFeedButton {
-    background-color: #f4d03f; /* Yellow background */
-    color: black; /* Black text */
-    border: 1px solid #ccc; /* Add a border */
-    border-radius: 5px; /* Slight round corners, adjust as needed */
-    padding: 15px 30px; /* Padding to increase size */
-    font-size: 1.5em; /* Larger text */
-    cursor: pointer; /* Change cursor to pointer */
-    outline: none; /* Remove outline */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover and click effects */
+    background-color: #f4d03f; 
+    color: black; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    padding: 15px 30px; 
+    font-size: 1.5em; 
+    cursor: pointer; 
+    outline: none; 
+    transition: background-color 0.3s, transform 0.3s; 
 }
 
 .startFeedButton:hover {
-    background-color: #e6be8a; /* Slightly lighter yellow on hover */
-    transform: scale(1.05); /* Slightly increase size on hover */
+    background-color: #e6be8a; 
+    transform: scale(1.05); 
 }
 
 .startFeedButton:active {
-    transform: scale(0.95); /* Slightly decrease size when clicked */
+    transform: scale(0.95); 
 }
 
 .startButtonContainer {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    height: 100vh; /* Full height of the viewport */
+    height: 40vh; /* Full height of the viewport */
     padding: 20px; /* Add some padding */
 }
 

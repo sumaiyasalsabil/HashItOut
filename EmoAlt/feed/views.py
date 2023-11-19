@@ -3,7 +3,6 @@ import random
 import numpy as np
 from . import models
 from . import forms
-import time
 
 # Create your views here.
 
@@ -22,7 +21,6 @@ def feed(request):
         print(request.POST)
         if clicked:
             loading = True
-            time.sleep(5)
             get_window()
             button.clicked = True
             feed_active = True
